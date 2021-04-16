@@ -8,6 +8,7 @@ import { auth } from "./firebase";
 
 const Todos = () => {
   const [todo, setTodo] = useState("");
+  const todosRef = firestore.collection(`users/${auth.currentUser.uid}/todos`);
   
   const todos = [];
 
@@ -17,6 +18,11 @@ const Todos = () => {
     event.preventDefault();
 
     setTodo(" ");
+    addTodo({
+        text: todo,
+        complete: false,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    });
     
   };
 
