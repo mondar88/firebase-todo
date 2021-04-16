@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Todos from "./Todos";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const sighInWithGoogle = () => {};
+  
+
+const SignIn = () => (
+  <main>
+    <button onClick={sighInWithGoogle}>Sign In With Google</button>
+  </main>
+);
+
+const App = () => {
+  const user = "";
+
+  return user ? <Todos /> : <SignIn />;
+};
 
 export default App;
