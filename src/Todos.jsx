@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 
+import { auth } from "./firebase";
+
 
 
 
@@ -9,7 +11,7 @@ const Todos = () => {
   
   const todos = [];
 
-  const signOut = () => {};
+  const signOut = () => auth.signOut();
 
   const onSubmitTodo = (event) => {
     event.preventDefault();
